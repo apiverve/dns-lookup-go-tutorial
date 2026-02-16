@@ -202,6 +202,14 @@ Explore more APIs at [APIVerve](https://apiverve.com/marketplace?utm_source=gith
 - [WHOIS Lookup](https://apiverve.com/marketplace/whoislookup?utm_source=github&utm_medium=tutorial&utm_campaign=dns-lookup-go-tutorial) - Domain registration info
 - [MX Lookup](https://apiverve.com/marketplace/mxlookup?utm_source=github&utm_medium=tutorial&utm_campaign=dns-lookup-go-tutorial) - Mail server lookup
 
+## Free Plan Note
+
+This tutorial works with the free APIVerve plan. Some APIs may have:
+- **Locked fields**: Premium response fields return `null` on free plans
+- **Ignored parameters**: Some optional parameters require a paid plan
+
+The API response includes a `premium` object when limitations apply. [Upgrade anytime](https://dashboard.apiverve.com/plans) to unlock all features.
+
 ## License
 
 MIT - see [LICENSE](LICENSE)
