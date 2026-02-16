@@ -25,19 +25,25 @@ const (
 
 // APIResponse represents the API response structure
 type APIResponse struct {
-	Status string   `json:"status"`
-	Error  string   `json:"error"`
-	Data   DNSData  `json:"data"`
+	Status string      `json:"status"`
+	Error  string      `json:"error"`
+	Data   APIData     `json:"data"`
+}
+
+// APIData contains the domain and records
+type APIData struct {
+	Domain  string   `json:"domain"`
+	Records DNSData  `json:"records"`
 }
 
 // DNSData contains the DNS record information
 type DNSData struct {
-	A     []string `json:"A"`
-	AAAA  []string `json:"AAAA"`
+	A     []string   `json:"A"`
+	AAAA  []string   `json:"AAAA"`
 	MX    []MXRecord `json:"MX"`
-	TXT   []string `json:"TXT"`
-	CNAME []string `json:"CNAME"`
-	NS    []string `json:"NS"`
+	TXT   []string   `json:"TXT"`
+	CNAME []string   `json:"CNAME"`
+	NS    []string   `json:"NS"`
 }
 
 // MXRecord represents a mail exchange record
@@ -93,7 +99,7 @@ func lookupDNS(domain string) (*DNSData, error) {
 		return nil, fmt.Errorf(errMsg)
 	}
 
-	return &apiResp.Data, nil
+	return &apiResp.Data.Records, nil
 }
 
 // printRecords displays DNS records in a formatted way
