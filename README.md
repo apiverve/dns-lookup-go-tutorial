@@ -149,14 +149,19 @@ resp, _ := client.Do(req)
   "status": "ok",
   "error": null,
   "data": {
-    "A": ["140.82.112.3", "140.82.112.4"],
-    "AAAA": [],
-    "MX": [
-      {"exchange": "aspmx.l.google.com", "priority": 1}
-    ],
-    "NS": ["dns1.p08.nsone.net"],
-    "TXT": ["v=spf1 include:_spf.google.com ~all"],
-    "CNAME": []
+    "domain": "myspace.com",
+    "records": {
+      "A": ["34.111.176.156"],
+      "MX": [
+        {"exchange": "us-smtp-inbound-1.mimecast.com", "priority": 10},
+        {"exchange": "us-smtp-inbound-2.mimecast.com", "priority": 10}
+      ],
+      "NS": [
+        "ns-cloud-a1.googledomains.com",
+        "ns-cloud-a2.googledomains.com"
+      ],
+      "TXT": ["v=spf1 mx ip4:63.208.226.34 ..."]
+    }
   }
 }
 ```
